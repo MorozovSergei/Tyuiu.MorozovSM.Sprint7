@@ -117,38 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonSearch_MSM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAU1JREFUSEvdlcsuBEEUQDsRj4VYSIgFsfMKdkLC77CwG89P8FgT4hc8wn9ggZBY
-        YCXWLCU4p7tnI5Oprp50Ik5y0nUrVX1n6nE7+Qu04QIu4Wb+nEf7W6YL1/ENL/EQt/Onsf1r6LhSDOIV
-        nuKIHQ0YxTN0nOOj6MVHrKVRmBV0vPMK46/fypqF2cHjrBlmDp+wI42K04nPOJtGAfbRzSzDBu5lzebc
-        42TWjGYKnR/kA7uzZjTOc36QdyybpAedH6SV5ZrGQsvlxnnLy2DJOciazfEIeoQ9kjFYWl5wJo0KcILW
-        qBh2sfBllHpZWU2jMN6rL5xIowgseFbacxyzowHjeIGf+I132I9RuM7+G0u6lfYIXUaf1/iKbvYQmqB0
-        IvHj5EdqEX3pch63Yx1fXE90m8eV0Ic3aKIHHMBK+L+J/MYM21EVJqo0wS+S5Af8PUQbeUxaZgAAAABJ
-        RU5ErkJggg==
-</value>
+  <data name="textBoxInformation_MSM.Text" xml:space="preserve">
+    <value>Разработчик: Морозо С.М.
+Группа: АСОиУб 24-1
+
+Программа разработана в рамках изучения языка C#
+
+Тюменский Индустриальный Университет (с) 2024
+Высшая Школа Цифровых Технологий (с) 2024
+
+Внутреннее имя: Tyuiu.MorozovSM.Sprint7.Project.V11</value>
   </data>
-  <metadata name="toolTip_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>345, 17</value>
-  </metadata>
-  <metadata name="NumberRow.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="openFileDialog_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="Function.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Result.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="saveFileDialog_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>183, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>59</value>
-  </metadata>
 </root>

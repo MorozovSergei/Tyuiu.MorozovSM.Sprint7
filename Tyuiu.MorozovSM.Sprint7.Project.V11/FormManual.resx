@@ -117,38 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonSearch_MSM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAU1JREFUSEvdlcsuBEEUQDsRj4VYSIgFsfMKdkLC77CwG89P8FgT4hc8wn9ggZBY
-        YCXWLCU4p7tnI5Oprp50Ik5y0nUrVX1n6nE7+Qu04QIu4Wb+nEf7W6YL1/ENL/EQt/Onsf1r6LhSDOIV
-        nuKIHQ0YxTN0nOOj6MVHrKVRmBV0vPMK46/fypqF2cHjrBlmDp+wI42K04nPOJtGAfbRzSzDBu5lzebc
-        42TWjGYKnR/kA7uzZjTOc36QdyybpAedH6SV5ZrGQsvlxnnLy2DJOciazfEIeoQ9kjFYWl5wJo0KcILW
-        qBh2sfBllHpZWU2jMN6rL5xIowgseFbacxyzowHjeIGf+I132I9RuM7+G0u6lfYIXUaf1/iKbvYQmqB0
-        IvHj5EdqEX3pch63Yx1fXE90m8eV0Ic3aKIHHMBK+L+J/MYM21EVJqo0wS+S5Af8PUQbeUxaZgAAAABJ
-        RU5ErkJggg==
+  <data name="textBoxUpLeft_MSM.Text" xml:space="preserve">
+    <value>В левом верхнем углу расположены 3 кнопки.
+Кнопка "Загрузить" отвечает за загрузку файлов в программу. После загрузки появляется 2 дополнительные кнопки, которые позволяют решить, добавлять файл к основной таблице или нет.
+Кнопка "Сохранить" отвечаетя за сохранение основной таблицы после выключения программы.
+Кнопка "Сохранить как" отвечает за сохранение отдельного файла подходящего для программы.
 </value>
   </data>
-  <metadata name="toolTip_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>345, 17</value>
-  </metadata>
-  <metadata name="NumberRow.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="openFileDialog_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="Function.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Result.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="saveFileDialog_MSM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>183, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>59</value>
-  </metadata>
+  <data name="textBoxUpRight_MSM.Text" xml:space="preserve">
+    <value>В правом верхнем углу расположены 2 кнопки и поиск.
+Кнопка "Меню" отвечает за возвращение в меню.
+Кнопка "Сбросить" отвечает за сброс всех настроек таблицы.
+Поиск осуществляется посредством ввода поискового запроса и нажатия на лупу.
+</value>
+  </data>
+  <data name="textBoxDown_MSM.Text" xml:space="preserve">
+    <value>Снизу расположены 2 плашки.
+Верхняя отвечает за выбор столбца по которому будет считаться статистика.
+Нижняя отвечает за выбор в котором будет действовать фильтр.
+При выборе столбца статистики будет выведена возможная статистика по этому столбцу.
+При выборе столбца фильтра будет выведено окно фильтра. В окне фильтра расположены настройки фильтра, кнопка "Сбросить", отвечающая за сброс настроек фильтра, и кнопка "Применить", при нажатии которой применяется фильтр.
+</value>
+  </data>
 </root>
