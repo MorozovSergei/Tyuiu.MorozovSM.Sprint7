@@ -231,7 +231,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             string[] MassivColumnStr = SummColumn.Trim(';').Split(";", StringSplitOptions.RemoveEmptyEntries);
             dataGridViewFunction_MSM.Rows[0].Cells[0].Value = "—четчик";
             dataGridViewFunction_MSM.Rows[0].Cells[1].Value = MassivColumnStr.Count();
-            try
+            if (MassivColumnStr.All(s => double.TryParse(s, out var pass)))
             {
                 double[] MassivColumnDouble = new double[MassivColumnStr.Length];
                 for (int i = 0; i < MassivColumnStr.Length; i++) MassivColumnDouble[i] = double.Parse(MassivColumnStr[i]);
@@ -251,7 +251,6 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
                 }
                 chartGraphic_MSM.Visible = true;
             }
-            catch { }
         }
 
         private void comboBoxIndexStaticColumn_MSM_TextChanged(object sender, EventArgs e)
@@ -267,7 +266,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             dataGridViewFunction_MSM.Visible = true;
             dataGridViewFunction_MSM.Rows[0].Cells[0].Value = "—четчик";
             dataGridViewFunction_MSM.Rows[0].Cells[1].Value = MassivColumnStr.Count();
-            try
+            if (MassivColumnStr.All(s => double.TryParse(s, out var pass)))
             {
                 double[] MassivColumnDouble = new double[MassivColumnStr.Length];
                 for (int i = 0; i < MassivColumnStr.Length; i++) MassivColumnDouble[i] = double.Parse(MassivColumnStr[i]);
@@ -286,7 +285,6 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
                 }
                 chartGraphic_MSM.Visible = true;
             }
-            catch { }
         }
 
         private void buttonResetTable_MSM_Click(object sender, EventArgs e)
