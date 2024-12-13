@@ -19,17 +19,25 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
         int indexStaticColumnInComboBox;
         int indexFilterColumnInComboBox;
         int RowNumber = 0;
-        public FormMain()
+
+        public void UpdateMatrix()
         {
-            InitializeComponent();
-            if (!File.Exists(pathTable)) File.WriteAllText(pathTable, ";;;;;;;;;;0");
-            matrixTable = ds.CreateMatrixFromFileCSV(pathTable);
+            flagChangeValueTable = false;
+            dataGridViewTable_MSM.Rows.Clear();
             for (int i = 0; i < matrixTable.GetLength(0); i++)
             {
                 dataGridViewTable_MSM.Rows.Add();
                 for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
             }
             flagChangeValueTable = true;
+        }
+
+        public FormMain()
+        {
+            InitializeComponent();
+            if (!File.Exists(pathTable)) File.WriteAllText(pathTable, ";;;;;;;;;;0");
+            matrixTable = ds.CreateMatrixFromFileCSV(pathTable);
+            UpdateMatrix();
             RowNumber = matrixTable.GetLength(0);
         }
 
@@ -59,16 +67,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             {
                 matrixOldTable = matrixTable;
                 matrixTable = ds.CreateMatrixFromFileCSV(pathLoadTable);
-
-                flagChangeValueTable = false;
-                dataGridViewTable_MSM.Rows.Clear();
-                for (int i = 0; i < matrixTable.GetLength(0); i++)
-                {
-                    dataGridViewTable_MSM.Rows.Add();
-                    for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
-                }
-                flagChangeValueTable = true;
-
+                UpdateMatrix();
                 buttonLoadTableClose_MSM.Visible = true;
                 buttonLoadTableSave_MSM.Visible = true;
             }
@@ -78,15 +77,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
         private void buttonLoadTableClose_MSM_Click(object sender, EventArgs e)
         {
             matrixTable = matrixOldTable;
-            flagChangeValueTable = false;
-            dataGridViewTable_MSM.Rows.Clear();
-            for (int i = 0; i < matrixTable.GetLength(0); i++)
-            {
-                dataGridViewTable_MSM.Rows.Add();
-                for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
-            }
-            flagChangeValueTable = true;
-
+            UpdateMatrix();
             buttonLoadTableClose_MSM.Visible = false;
             buttonLoadTableSave_MSM.Visible = false;
             buttonSaveTableInFile_MSM.Visible = true;
@@ -97,15 +88,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             matrixOldTable = ds.RowsAddedInTable(matrixOldTable, matrixTable.GetLength(0) + matrixOldTable.GetLength(0));
             for (int i = 0; i < matrixTable.GetLength(0); i++) for (int j = 0; j < matrixTable.GetLength(1); j++) matrixOldTable[i + matrixOldTable.GetLength(0) - matrixTable.GetLength(0), j] = matrixTable[i, j];
             matrixTable = matrixOldTable;
-            flagChangeValueTable = false;
-            dataGridViewTable_MSM.Rows.Clear();
-            for (int i = 0; i < matrixTable.GetLength(0); i++)
-            {
-                dataGridViewTable_MSM.Rows.Add();
-                for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
-            }
-            flagChangeValueTable = true;
-
+            UpdateMatrix();
             buttonLoadTableClose_MSM.Visible = false;
             buttonLoadTableSave_MSM.Visible = false;
             buttonSaveTableInFile_MSM.Visible = true;
@@ -123,6 +106,12 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             }
         }
 
+        private void dataGridViewTable_MSM_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            matrixTable = new string[matrixTable.GetLength(0) - 1, matrixTable.GetLength(1)];
+            for (int i = 0; i < matrixTable.GetLength(0); i++) for (int j = 0; j < matrixTable.GetLength(1); j++) matrixTable[i, j] = dataGridViewTable_MSM.Rows[i].Cells[j].Value.ToString();
+        }
+
         private void dataGridViewTable_MSM_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (flagChangeValueTable)
@@ -137,14 +126,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
         {
             if (textBoxSearch_MSM.Text == "")
             {
-                flagChangeValueTable = false;
-                dataGridViewTable_MSM.Rows.Clear();
-                for (int i = 0; i < matrixTable.GetLength(0); i++)
-                {
-                    dataGridViewTable_MSM.Rows.Add();
-                    for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
-                }
-                flagChangeValueTable = true;
+                UpdateMatrix();
             }
             else
             {
@@ -295,14 +277,7 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
             chartGraphic_MSM.Visible = false;
             dataGridViewFunction_MSM.Visible = false;
             checkedListBoxFilter_MSM.Items.Clear();
-            flagChangeValueTable = false;
-            dataGridViewTable_MSM.Rows.Clear();
-            for (int i = 0; i < matrixTable.GetLength(0); i++)
-            {
-                dataGridViewTable_MSM.Rows.Add();
-                for (int j = 0; j < matrixTable.GetLength(1); j++) dataGridViewTable_MSM.Rows[i].Cells[j].Value = matrixTable[i, j];
-            }
-            flagChangeValueTable = true;
+            UpdateMatrix();
         }
 
         private void buttonMenu_MSM_Click(object sender, EventArgs e)
@@ -351,12 +326,6 @@ namespace Tyuiu.MorozovSM.Sprint7.Project.V11
         {
             FormAbout fa = new FormAbout();
             fa.ShowDialog();
-        }
-
-        private void dataGridViewTable_MSM_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            matrixTable = new string[matrixTable.GetLength(0) - 1, matrixTable.GetLength(1)];
-            for (int i = 0; i < matrixTable.GetLength(0); i++) for (int j = 0; j < matrixTable.GetLength(1); j++) matrixTable[i, j] = dataGridViewTable_MSM.Rows[i].Cells[j].Value.ToString();
         }
     }
 }
